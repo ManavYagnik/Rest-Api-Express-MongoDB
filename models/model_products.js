@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dataSchema = new mongoose.Schema({
+const productsdataSchema = new mongoose.Schema({
 
 id:Number,
 name:String,
@@ -12,4 +12,4 @@ photo:String
 
 })
 
-module.exports = mongoose.model('products', dataSchema)
+module.exports = mongoose.model('products', productsdataSchema)
