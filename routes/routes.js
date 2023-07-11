@@ -59,6 +59,17 @@ router.get('/products/:category', async (req, res) => {
 })
 
 
+router.get('/products/search/:str', async (req, res) => {
+   
+    try {
+        const data = await Model_Products.find({$text: {$search: req.params.str}});
+     
+        res.json(data);
+    }
+    catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
 
 
 //Update by ID Method
@@ -180,6 +191,15 @@ router.delete('/contacts/delete/:id', async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 })
+
+
+
+
+
+
+
+
+
 
 
 module.exports = router;

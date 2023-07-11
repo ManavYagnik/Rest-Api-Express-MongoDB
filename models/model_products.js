@@ -12,4 +12,6 @@ photo:String
 
 })
 
+productsdataSchema.index({'$**': 'text'});
 module.exports = mongoose.model('products', productsdataSchema)
+
